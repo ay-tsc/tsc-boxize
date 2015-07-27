@@ -1,0 +1,46 @@
+body {
+  padding: 20px;
+}
+
+.boxize {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0 0 20px 0;
+  padding: 15px;
+  background-color: #EFEFEF;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.boxize a {
+  cursor: pointer;
+}
+
+[contenteditable="true"]:focus {
+  outline: none;
+}
+
+.yt-video-content {
+  margin: 10px 0;
+  display: block;
+  width: 450px;
+  height: 350px;
+  position: relative;
+}
+
+.remove-video {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+  color: #f00;
+  display: none;
+}
+
+.yt-video-content:hover .remove-video {
+  display: block
+}
