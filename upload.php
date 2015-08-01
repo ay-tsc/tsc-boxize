@@ -1,5 +1,5 @@
 <?php
-print_r($_FILES['file']);
+
 if ( $_FILES['file'] ) {
 	$files = $_FILES['file'];
 	$file_names = $files['name'];
