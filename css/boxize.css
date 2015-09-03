@@ -30,6 +30,10 @@ body {
   position: relative;
 }
 
+.hide {
+  display: none;
+}
+
 .remove-video {
   position: absolute;
   right: 0;
@@ -44,4 +48,10 @@ body {
 
 .yt-video-content:hover .remove-video {
   display: block
+}
+
+.yt-video-loading {
+  margin-left: 10px;
+  display: none;
+  vertical-align: middle;
 }

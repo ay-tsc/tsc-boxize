@@ -130,7 +130,7 @@
             // exception for IFrame as last child
             var lastChild = $(parent).find(':last-child');
             if ( lastChild.is('iframe') ) {
-                $(parent).append(settings.editableExtender);
+                //$(parent).append(settings.editableExtender);
             }
 
         });
@@ -231,7 +231,7 @@
 
         return this.each(function() {
             var _el = this;
-            var keyTimer = null, keyDelay = 1000;
+            var keyTimer = null, keyDelay = 500;
 
             $(_el)
                 .attr('contenteditable', true)

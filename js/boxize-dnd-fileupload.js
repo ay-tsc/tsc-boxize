@@ -40,15 +40,19 @@
             var _w = parseFloat(w), _h = parseFloat(h);
 
             if ( t === 'landscape' ) {
-                if ( _w >= pW ) _w = pW / 0.3;
+                _w = 400;
+                _h = 300;
+                /*if ( _w >= pW ) _w = pW / 0.3;
                 if ( _h >= pH ) _h = _h / 1.62;
-                _w = _h * 1.62 > _w ? (_w / 1.62) : (_h * 1.62);
+                _w = _h * 1.62 > _w ? (_w / 1.62) : (_h * 1.62);*/
             } else if ( t === 'portrait' ) {
-                _w = _w >= pW ? (pW / 1.62) : (_w / 1.62);
-                _h = (_h / 1.62) > _h ? _h : (_h / 1.62);
+                _w = 300;
+                _h = 400;
+                /*_w = _w >= pW ? (pW / 1.62) : (_w / 1.62);
+                _h = (_h / 1.62) > _h ? _h : (_h / 1.62);*/
             } else {
-                _w = _w / 1.62;
-                _h = _h / 1.62;
+                _w = 400; //_w / 1.62;
+                _h = 400; //_h / 1.62;
             }
         }
         return {width: _w, height: _h};
@@ -114,8 +118,12 @@
                                 _thumb.src = file.xhr.response;
                                 _thumb.onload = function () {
                                     this.classList.add('dz-img-responsive');
+                                          
+                                    // make resizable
+                                    $(_thumb).parent().resizable();
+
                                     setTimeout(function () {
-                                        $(file.previewElement).find("[data-dz-thumbnail]").nextAll().remove();
+                                        $(file.previewElement).find("div.resiable-image").nextAll().remove();
                                     }, 20);
                                 };
                             }
@@ -125,10 +133,10 @@
                     })(this)), 10);
                 }
             }).on('queuecomplete', function () {
-                placeCaretAtEnd(el);
+                /*placeCaretAtEnd(el);
                 var ev = $.Event('keyup');
                 ev.which = 13;
-                $me.trigger(ev);
+                $me.trigger(ev);*/
             });
 
         });
